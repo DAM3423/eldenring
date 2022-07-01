@@ -11,7 +11,7 @@ read tarnished
 
 sleep 1
 
-if [[ $beast == $tarnished ]]; then
+if [[ $beast == $tarnished || $tarnished == "tea" ]]; then
     echo "Beast tarnished"
 else
     echo "You died"
@@ -26,7 +26,12 @@ read tarnished
 sleep 1
 
 if [[ $maggie == $tarnished || $tarnished == "coffee" ]]; then
-    echo "Beast tarnished"
+    if [[ $USER == "dominic" ]]; then
+    echo "Maggie is vanquished, you win!"
+    else
+        echo "You died"
+        exit 1
+    fi
 else
     echo "You died"
     exit 1
